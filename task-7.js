@@ -1,10 +1,7 @@
-export default class Task7 {
-    constructor() {
-        this.input = document.querySelector('#font-size-control');
-        this.span = document.querySelector('#text');
-        this.input.addEventListener('change', this.inputSize.bind(this));
-    }
-    inputSize() {
-        this.span.style.fontSize = this.input.value +"px";
-    }
-}
+let controlFont = document.getElementById("font-size-control");
+
+let text = document.getElementById("text");
+
+controlFont.oninput = function () {
+    text.style.fontSize = controlFont.value + "px";
+};

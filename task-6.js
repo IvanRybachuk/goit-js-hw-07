@@ -1,16 +1,19 @@
-export default class Task6 {
-    constructor() {
-        this.input = document.querySelector('#validation-input');
-        this.input.addEventListener('blur', this.inputBlur.bind(this));
+let inputVal = document.getElementById("validation-input");
+
+let totalLenght = inputVal.getAttribute("data-length");
+let intTotallenght = parseInt(totalLenght, 10);
+
+inputVal.oninput = function () {
+    if (inputVal.value.length === intTotallenght) {
+        inputVal.classList.remove("invalid");
+        inputVal.classList.add("valid");
     }
-    inputBlur() {
-        if (this.input.value.length === +this.input.dataset.length) {
-            this.input.classList.add('valid');
-            this.input.classList.remove('invalid');
-        } else {
-            this.input.classList.remove('valid');
-            this.input.classList.add('invalid');
-        }
+    if (inputVal.value.length === 0) {
+        inputVal.classList.remove("valid");
+        inputVal.classList.remove("invalid");
     }
-}
+    if (inputVal.value.length !== intTotallenght && inputVal.value.length !== 0) {
+        inputVal.classList.add("invalid");
+    }
+};
 

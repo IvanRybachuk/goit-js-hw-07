@@ -1,12 +1,10 @@
-export default class Task5 {
-    constructor() {
-        this.input = document.querySelector('#name-input');
-        this.span = document.querySelector('#name-output');
-        this.input.addEventListener('input', this.inputHandler.bind(this));
+let input = document.getElementById("name-input");
+let nameOutput = document.getElementById("name-output");
 
+input.oninput = function () {
+    if (input.value === '') {
+        nameOutput.innerHTML = 'незнакомец';
+    } else {
+        nameOutput.innerHTML = input.value;
     }
-    inputHandler() {
-        this.input.value === "" ? this.span.textContent = 'незнакомец' 
-        : this.span.textContent = this.input.value;
-    }
-};
+}

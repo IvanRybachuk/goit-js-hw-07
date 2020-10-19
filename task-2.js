@@ -1,23 +1,17 @@
 const ingredients = [
-    'Картошка',
-    'Грибы',
-    'Чеснок',
-    'Помидоры',
-    'Зелень',
-    'Приправы',
+    "Картошка",
+    "Грибы",
+    "Чеснок",
+    "Помидоры",
+    "Зелень",
+    "Приправы"
 ];
+let ulList = document.getElementById("ingredients");
+const foodIngredients = ingredients.forEach(ingredient => {
+    let items = document.createElement("li");
+    items.innerHTML = ingredient;
+    ulList.append(items);
+    parent.append(...items)
+});
 
-
-export default class Task2 {
-    constructor() {
-        this.ulList = document.getElementById("ingredients");
-    }
-    showList() {
-        ingredients.forEach(ingredient => {
-            let items = document.createElement("li");
-            items.innerHTML = ingredient;
-            this.ulList.append(items);
-        });
-    }
-}
-
+console.log(foodIngredients);
