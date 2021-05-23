@@ -6,12 +6,11 @@ const ingredients = [
     "Зелень",
     "Приправы"
 ];
-let ulList = document.getElementById("ingredients");
-const foodIngredients = ingredients.forEach(ingredient => {
-    let items = document.createElement("li");
-    items.innerHTML = ingredient;
-    ulList.append(items);
-    parent.append(...items)
-});
+const ul = document.querySelector('#ingredients')
 
-console.log(foodIngredients);
+ingredients.forEach((el)=>{
+  document.createElement('li');
+  const li = document.createElement('li');
+  li.textContent = el;
+  ul.append(li);
+})
